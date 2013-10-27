@@ -1,0 +1,82 @@
+.corner-btn {
+  // Required
+  position: absolute;
+  top: 12px;
+  left: 22px;
+
+  @include display(flex);
+  @include justify-content(flex-start);
+  @include align-items(center);
+
+  &:active {
+    .corner-btn__link {
+      color: $flat-blue-3;
+    }
+    .corner-btn__chevron-piece {
+      background: $flat-blue-3;
+      position: relative;
+      left: 1px;
+    }
+  }
+}
+
+.corner-btn__link {
+  position: relative;
+  top: 6px;
+  left: -5px;
+
+  // Defaults
+  font-size: 20px;
+  color: $flat-blue-2;
+  text-decoration: none; }
+
+.corner-btn__chevron {
+  width: 20px;
+  height: 20px; }
+
+.corner-btn__chevron-piece {
+  height: 100%;
+  width: 3px;
+
+  // Defaults
+  background: $flat-blue-2;
+
+  &:first-child {
+    @include transform(rotate(35deg));
+  }
+
+  &:last-child {
+    @include transform(rotate(-35deg));
+    margin-top: -5px;
+  }
+}
+
+.corner-btn--right {
+  @extend .corner-btn;
+
+  left: inherit;  // Reset from extend
+  right: 22px;
+
+  &:active {
+    .corner-btn__chevron-piece {
+      position: relative;
+      left: inherit;
+      right: 1px;
+    }
+  }
+
+  .corner-btn__link {
+    left: -12px;
+  }
+
+  .corner-btn__chevron-piece {
+    &:first-child {
+      @include transform(rotate(-35deg));
+    }
+
+    &:last-child {
+      @include transform(rotate(35deg));
+      margin-top: -5px;
+    }
+  }
+}

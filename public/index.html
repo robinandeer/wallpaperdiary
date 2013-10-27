@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/app.css">
+
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="corner-btn portfolio-link">
+      <div class="corner-btn__chevron">
+        <div class="corner-btn__chevron-piece"></div>
+        <div class="corner-btn__chevron-piece"></div>
+      </div>
+      <a href="http://www.robinandeer.com/" class="corner-btn__link">Portfolio</a>
+    </div>
+
+    <div class="header-container">
+      <header class="wrapper clearfix">
+        <h1 class="title">Wallpaper Diary</h1>
+        <p class="sub-title">Byproducts of getting invested.</p>
+      </header>
+    </div>
+
+    <div class="main-container">
+      <div class="main wrapper clearfix">
+
+        <div class="reveal__wrapper">
+          <div class="reveal__content">
+            <h2>On being a programmer</h2>
+            <p>I read an inspriring blog post detailing tips on how to market oneself as a programmer.</p>
+            <p>This rather <a href="#">cynical</a> quote resonated with me the most.</p>
+
+            <div class="list-inline tags">
+              <a href="#" class="list-inline__item">#programming</a>
+              <a href="#" class="list-inline__item">#quote</a>
+            </div>
+
+            <a href="#" class="btn--download">Download</a>
+          </div>
+
+          <div class="reveal__overlay">
+            <img src="img/wallpaper1610.png">
+          </div>
+
+          <div class="reveal__expand" data-date="5 days ago">5 days ago</div>
+        </div>
+
+        <div class="reveal__wrapper">
+          <div class="reveal__content">
+            <h2>Clinical Genomics Logo</h2>
+            <p>I work at a place called "Science for Life Laboratory" in Stockholm, Sweden. They are starting up a new diagnostic platform to take in samples from all over Sweden and sequence for disease causing mutations.</p>
+            <p>Oh - and they need a logo. I had already put together a flat-looking DNA molecule for a presentation which I thought would kind of work. Now I'm mustering enough curage to present the idea officially.</p>
+            <div class="btn--download">Download</div>
+          </div>
+
+          <div class="reveal__overlay">
+            <img src="img/clinical-wp.png">
+          </div>
+
+          <div class="reveal__expand" data-date="1 month ago">1 month ago</div>
+        </div>
+
+      </div> <!-- #main -->
+    </div> <!-- #main-container -->
+
+    <div class="footer-container">
+      <div class="corner-btn">
+        <div class="corner-btn__chevron">
+          <div class="corner-btn__chevron-piece"></div>
+          <div class="corner-btn__chevron-piece"></div>
+        </div>
+        <a href="http://www.robinandeer.com/" class="corner-btn__link">Prev.</a>
+      </div>
+
+      <div class="corner-btn--right">
+        <a href="http://www.robinandeer.com/" class="corner-btn__link">Next</a>
+        <div class="corner-btn__chevron">
+          <div class="corner-btn__chevron-piece"></div>
+          <div class="corner-btn__chevron-piece"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <script>
+
+      $(".reveal__expand").bind("click", function() {
+        // Add class to parent wrapper
+        $(this).parent().toggleClass("expanded");
+
+        if ($(this).text() == "Close") {
+          // Place store text
+          $(this).text($(this).data("date"));
+        } else {
+          $(this).text("Close");
+        }
+
+      });
+
+    </script>
+
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src='//www.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
+</html>

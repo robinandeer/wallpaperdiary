@@ -1,0 +1,83 @@
+.reveal__wrapper {
+  // Required
+  position: relative;  // Place child elements absolutely
+  overflow: hidden;  // Clip content
+
+  // Defaults
+  background: rgba(#FFF, 0.07);  // Separate from background
+}
+
+.reveal__overlay {
+  // Defaults
+  position: relative;  // Make sure overlay is on top of content
+  @include transition-property(transform);  // Slide away content (reveal)
+  @include transition-duration(0.3s);
+
+  img {
+    // Required
+    width: 100%;  // Contain images
+    display: block;  // Remove extra space under image (source: http://www.tequilafish.com/2009/04/29/css-removing-extra-space-underneath-an-image/)
+  }
+}
+
+.reveal__content {
+  // Required
+  position: absolute;  // Hide behind overlay
+  top: 0;
+  overflow-y: scroll;
+  height: 100%;
+  max-width: 450px;
+  padding: 50px 30px 30px;
+
+  // Defaults
+  border-bottom: 1px solid rgba(#FFF, 0.05);
+
+  @media (min-width: 400px) {
+    padding: 70px 50px 50px;
+  }
+}
+
+.expanded {
+  .reveal__overlay {
+    // Defaults
+    @include transform(translateX(450px));  // Slide overlay to reveal content
+  }
+}
+
+.reveal__expand {
+  // Requried
+  position: absolute;  // Place in top left corner
+  top: 0;
+  cursor: pointer;
+
+  // Defaults
+  padding: 7px 11px 11px 10px;
+
+  border-radius: 0 0 7px 0;
+  font-size: 20px;
+  font-weight: bold;
+  background: rgba(#000, 0.1);
+  color: rgba(#FFF, 0.5);
+
+  &:hover {
+    background: rgba(#000, 0.3);
+  }
+
+  &:active {
+    // Defaults
+    color: $flat-gray-1;
+  }
+}
+
+// @media (min-width: 600px) {
+//   margin-left: 25px;
+//   margin-right: 25px; }
+
+// @media (min-width: 900px) {
+//   margin-left: 50px;
+//   margin-right: 50px; }
+
+// @media (min-width: 1500px) {
+//   margin-left: auto;
+//   margin-right: auto;
+//   width: 1400px; }

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="{block:English}en{/block:English}{block:French}fr{/block:French}{block:German}de{/block:German}{block:Japanese}ja{/block:Japanese}{block:Italian}it{/block:Italian}{block:Spanish}es{/block:Spanish}{block:Polish}pl{/block:Polish}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
+    {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="apple-touch-icon" href="{PortraitURL-128}">
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+    <!-- FONTS & STYLES -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://static.tumblr.com/pau9iv6/mZSmvbzwg/app.css">
+
+    <style type="text/css">
+      /* don't forget to let people mess up the theme with their own styles */
+      {CustomCSS}
+    </style>
+
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="corner-btn portfolio-link">
+      <div class="corner-btn__chevron">
+        <div class="corner-btn__chevron-piece"></div>
+        <div class="corner-btn__chevron-piece"></div>
+      </div>
+      <a href="http://www.robinandeer.com/" class="corner-btn__link">Portfolio</a>
+    </div>
+
+    <div class="header-container">
+      <header class="wrapper clearfix">
+        <h1 class="title">{Title}</h1>
+        {block:Description}<p class="sub-title">{Description}</p>{/block:Description}
+      </header>
+    </div>
+
+    <div class="main-container">
+      <div class="main wrapper clearfix">
+
+        {block:Posts}
+          {block:Photo}
+          <div class="reveal__wrapper">
+            <div class="reveal__content">
+              {block:Caption}
+                {Caption}
+              {/block:Caption}
+
+              {block:HasTags}
+              <div class="list-inline tags">
+                {block:Tags}
+                <a href="{TagURL}" class="list-inline__item">#{Tag}</a>
+                {/block:Tags}
+              </div>
+              {/block:HasTags}
+
+              <a href="{PhotoURL-HighRes}" class="btn--download">Download</a>
+            </div>
+
+            <div class="reveal__overlay">
+              <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+            </div>
+
+            {block:Date}
+              <div class="reveal__expand" data-date="{TimeAgo}">{TimeAgo}</div>
+            {/block:Date}
+
+          </div>
+          {/block:Photo}
+        {/block:Posts}
+
+      </div> <!-- #main -->
+    </div> <!-- #main-container -->
+
+    <div class="footer-container">
+      {block:PreviousPage}
+      <div class="corner-btn">
+        <div class="corner-btn__chevron">
+          <div class="corner-btn__chevron-piece"></div>
+          <div class="corner-btn__chevron-piece"></div>
+        </div>
+        <a href="{PreviousPage}" class="corner-btn__link">Prev.</a>
+      </div>
+      {/block:PreviousPage}
+
+      {block:NextPage}
+      <div class="corner-btn--right">
+        <a href="{NextPage}" class="corner-btn__link">Next</a>
+        <div class="corner-btn__chevron">
+          <div class="corner-btn__chevron-piece"></div>
+          <div class="corner-btn__chevron-piece"></div>
+        </div>
+      </div>
+      {/block:NextPage}
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <script>
+
+      $(".reveal__expand").bind("click", function() {
+        // Add class to parent wrapper
+        $(this).parent().toggleClass("expanded");
+
+        if ($(this).text() == "Close") {
+          // Place store text
+          $(this).text($(this).data("date"));
+        } else {
+          $(this).text("Close");
+        }
+
+      });
+
+    </script>
+
+    {block:IfGoogleAnalyticsID}
+    <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    {/block:IfGoogleAnalyticsID}
+  </body>
+</html>

@@ -1,0 +1,135 @@
+@import "normalize";
+// Import from Bourbon
+@import "bourbon/bourbon";
+// Import mixins for the newer flex-box specs
+@import "flex-box";
+// Import the colors from: http://flatuicolors.com/
+@import "flat-colors";
+
+@import "btn";
+@import "reveal";
+@import "corner-btn";
+
+* { box-sizing: border-box; }
+
+body,
+html {
+  font-family: Lato, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: rgba(#000, 0.7) }
+
+body {
+  background: #15171b; }
+
+.header-container {
+  padding: 20px 0 30px;
+
+  @media (min-width: 500px) {
+    padding: 30px 0 40px; }
+
+  @media (min-width: 600px) {
+    padding: 50px 0 60px; }}
+
+.title {
+  // Resets & defaults
+  margin: 0;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 200;
+  color: darken($flat-gray-1, 10%);
+
+  font-size: 40px;
+
+  @media (min-width: 500px) {
+    font-size: 50px; }
+
+  @media (min-width: 600px) {
+    font-size: 60px; }}
+
+.sub-title {
+  // Resets & defaults
+  margin: 0;
+  text-align: center;
+  color: darken($flat-gray-2, 30%); }
+
+h2 {
+  margin: 0;
+  color: $flat-green-1;
+  font-size: 30px;
+
+  @media (min-width: 500px) {
+    font-size: 40px;
+  }
+}
+
+p {
+  font-size: 15px;
+  line-height: 23px;
+  color: $flat-gray-1;
+
+  @media (min-width: 600px) {
+    font-size: 20px;
+    line-height: 28px; }}
+
+a {
+  color: $flat-blue-2;
+  text-decoration: none;
+
+  &:hover {
+    color: $flat-blue-1;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+.btn--download {
+  @extend .btn;
+
+  @media (min-width: 500px) {
+    margin-top: 30px;
+  }
+}
+
+.list-inline__item {
+  // Required
+  display: inline-block;
+  margin-right: 10px;
+
+  // Defaults
+  color: rgba(#FFF, 0.3);
+
+  &:hover {
+    color: rgba(#FFF, 0.5);
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+
+  @media (min-width: 600px) {
+    font-size: 20px;
+  }
+}
+
+.reveal__wrapper {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-container {
+  height: 80px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.portfolio-link {
+  display: none;
+
+  @media (min-width: 600px) {
+    @include display(flex);
+  }
+}
